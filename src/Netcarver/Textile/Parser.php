@@ -2250,7 +2250,7 @@ class Parser
         }
 
         if ($this->isRelUrl($url)) {
-            $size = @getimagesize(realpath($this->doc_root.ltrim($url, $this->ds)));
+       		if ( $filename = realpath($this->doc_root.ltrim($url, $this->ds)) )	$size = @getimagesize($filename);
         }
 
         if ($size) {
